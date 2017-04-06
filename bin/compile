@@ -13,8 +13,6 @@ function speak (){
   echo "-----> $(date -u '+%Y-%m-%d_%H:%M:%S') $1"
 }
 
-uname -a
-
 speak "Installing NPM..."
 cd $BUILD_DIR
 NODE_DIR="node-v7.8.0-linux-x64"
@@ -22,14 +20,10 @@ NODE_TAR="$NODE_DIR.tar.gz"
 wget https://nodejs.org/dist/v7.8.0/$NODE_TAR
 tar -zxf $NODE_TAR
 export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
-echo "$BUILD_DIR/$NODE_DIR/bin/"
-ls "$BUILD_DIR/$NODE_DIR/bin/"
-echo $PATH
 
 speak "Installing Polymer 2..."
-node --version
-npm --version
 npm install -g polymer-cli@next
+npm list -g
 
 speak "Installing package dependencies..."
 bower install

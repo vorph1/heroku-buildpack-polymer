@@ -19,7 +19,7 @@ wget https://nodejs.org/dist/v7.8.0/$NODE_NAME
 ls
 tar -zxf $NODE_NAME
 ls
-mv $NODE_NAME node
+mv "node-v7.8.0-linux-x86" node
 CWD=`pwd`
 PATH=$PATH:$CWD/node/bin
 ls ./node/bin/

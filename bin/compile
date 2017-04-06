@@ -15,7 +15,7 @@ function speak (){
 
 speak "Installing NPM..."
 NODE_DIR="node-v7.8.0-linux-x86"
-NODE_TAR="$NODE_NAME.tar.gz"
+NODE_TAR="$NODE_DIR.tar.gz"
 wget https://nodejs.org/dist/v7.8.0/$NODE_TAR
 echo "Before untar"
 ls

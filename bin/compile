@@ -13,12 +13,13 @@ function speak (){
   echo "-----> $(date -u '+%Y-%m-%d_%H:%M:%S') $1"
 }
 
-speak "Installing Linuxbrew..."
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-PATH="$HOME/.linuxbrew/bin:$PATH"
-
-speak "Installing NPM"
-brew install npm
+speak "Installing NPM..."
+NODE_NAME="node-v0.10.7-linux-x86.tar.gz"
+wget http://nodejs.org/dist/v7.8.0/$NODE_NAME
+tar -zxvf $NODE_NAME
+ln -s $NODE_NAME node
+CWD=`pwd`
+PATH=$PATH:$CWD/node/bin
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next

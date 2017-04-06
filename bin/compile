@@ -19,9 +19,10 @@ wget https://nodejs.org/dist/v7.8.0/$NODE_NAME
 ls
 tar -zxf $NODE_NAME
 ls
+mv $NODE_NAME node
 CWD=`pwd`
-PATH=$PATH:$CWD/bin
-ls ./bin/
+PATH=$PATH:$CWD/node/bin
+ls ./node/bin/
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next

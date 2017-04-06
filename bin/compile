@@ -24,7 +24,7 @@ echo "After untar"
 ls
 CWD="$(pwd)"
 echo "$CWD"
-PATH="$PATH:$CWD/$NODE_DIR/bin"
+export PATH="$PATH:$CWD/$NODE_DIR/bin"
 ls "$CWD/$NODE_DIR/bin/"
 
 speak "Installing Polymer 2..."

@@ -16,10 +16,12 @@ function speak (){
 speak "Installing NPM..."
 NODE_NAME="node-v7.8.0-linux-x86.tar.gz"
 wget https://nodejs.org/dist/v7.8.0/$NODE_NAME
-tar -zxvf $NODE_NAME
+tar -zxf $NODE_NAME
 ln -s $NODE_NAME node
 CWD=`pwd`
 PATH=$PATH:$CWD/node/bin
+echo $PATH
+ls ./node/bin
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next

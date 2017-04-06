@@ -13,20 +13,31 @@ function speak (){
   echo "-----> $(date -u '+%Y-%m-%d_%H:%M:%S') $1"
 }
 
+PROFILE_DIR="$BUILD_DIR/.profile.d"
+PROFILE_PATH="$PROFILE_DIR/init.sh"
+mkdir -p "$PROFILE_DIR"
+
+# Usage: $ set-env key value
+function set-env (){
+  echo "export $1=$2" >> "$PROFILE_PATH"
+}
+
 speak "Installing NPM..."
 cd $BUILD_DIR
 NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
 wget -nv https://nodejs.org/dist/v7.8.0/$NODE_TAR
 tar -zxf $NODE_TAR
-export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
+mv $BUILD_DIR/$NODE_DIR /app/
+export PATH="$PATH:/app/$NODE_DIR/bin"
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next
-polymer --version
 npm install -g bower
 
 speak "Installing package dependencies..."
 bower install
+
+set-env PATH "$PATH:/app/$NODE_DIR/bin"
 
 speak "Finished!"

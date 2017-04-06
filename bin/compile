@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+set -e
+set -o pipefail
+
+# Heroku-provided params
+BUILD_DIR="$1"
+CACHE_DIR="$2"
+ENV_DIR="$3"
+
+function speak (){
+  echo "-----> $(date -u '+%Y-%m-%d_%H:%M:%S') $1"
+}
+
+speak "Installing Polymer 2..."
+npm install -g polymer-cli@next
+
+speak "Installing package dependencies..."
+cd $BUILD_DIR
+bower install
+
+speak "Finished!"

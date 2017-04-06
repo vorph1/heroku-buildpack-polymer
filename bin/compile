@@ -19,9 +19,7 @@ NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
 wget -nv https://nodejs.org/dist/v7.8.0/$NODE_TAR
 tar -zxf $NODE_TAR
-mv $BUILD_DIR/$NODE_DIR $BUID_DIR/vendor/
-mkdir -p $BUILD_DIR/vendor
-export PATH="$PATH:$BUILD_DIR/vendor/$NODE_DIR/bin"
+export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next
@@ -30,6 +28,8 @@ npm install -g bower
 speak "Installing package dependencies..."
 bower install
 
+mv $BUILD_DIR/$NODE_DIR $BUID_DIR/vendor/
+mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/.profile.d
 cat<<EOF > $BUILD_DIR/.profile.d/init.sh
 PATH="\$PATH:\$HOME/$BUILD_DIR/vendor/$NODE_DIR/bin"

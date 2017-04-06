@@ -14,8 +14,8 @@ function speak (){
 }
 
 speak "Installing NPM..."
-NODE_NAME="node-v0.10.7-linux-x86.tar.gz"
-wget http://nodejs.org/dist/v7.8.0/$NODE_NAME
+NODE_NAME="node-v7.8.0-linux-x86.tar.gz"
+wget https://nodejs.org/dist/v7.8.0/$NODE_NAME
 tar -zxvf $NODE_NAME
 ln -s $NODE_NAME node
 CWD=`pwd`

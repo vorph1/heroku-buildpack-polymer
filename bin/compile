@@ -13,6 +13,8 @@ function speak (){
   echo "-----> $(date -u '+%Y-%m-%d_%H:%M:%S') $1"
 }
 
+uname -a
+
 speak "Installing NPM..."
 cd $BUILD_DIR
 NODE_DIR="node-v7.8.0-linux-x86"

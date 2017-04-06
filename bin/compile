@@ -23,6 +23,7 @@ export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli@next
+ls "$BUILD_DIR/$NODE_DIR/bin/"
 npm list -g
 
 speak "Installing package dependencies..."

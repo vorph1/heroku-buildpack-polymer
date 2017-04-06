@@ -29,7 +29,7 @@ speak "Installing package dependencies..."
 bower install
 
 mkdir -p $BUILD_DIR/vendor/bin
-mv $BUILD_DIR/$NODE_DIR $BUID_DIR/vendor/bin/
+mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/
 mkdir -p $BUILD_DIR/.profile.d
 cat<<EOF > $BUILD_DIR/.profile.d/init.sh
 PATH="\$PATH:\$HOME/vendor/bin/$NODE_DIR/bin"

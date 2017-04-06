@@ -22,14 +22,14 @@ tar -zxf $NODE_TAR
 export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 echo "$BUILD_DIR/$NODE_DIR/bin/"
 ls "$BUILD_DIR/$NODE_DIR/bin/"
+echo $PATH
 
 speak "Installing Polymer 2..."
-npm --version
 node --version
+npm --version
 npm install -g polymer-cli@next
 
 speak "Installing package dependencies..."
-cd $BUILD_DIR
 bower install
 
 speak "Finished!"

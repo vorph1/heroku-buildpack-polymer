@@ -26,7 +26,7 @@ if [ -d "$ENV_DIR" ]; then
 fi
 
 echo $NODE_ENV
-ls "$NODE_ENV"
+ls "$ENV_DIR"
 
 speak "Installing NPM..."
 cd $BUILD_DIR

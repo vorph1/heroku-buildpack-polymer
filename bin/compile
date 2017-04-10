@@ -26,7 +26,7 @@ fi
 speak "Installing NPM..."
 cd $BUILD_DIR
 rm config/env.js
-mv config/env-$NODE_ENV config/env.js
+mv config/env-$NODE_ENV.js config/env.js
 cat config/env.js
 NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"

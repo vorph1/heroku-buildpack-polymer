@@ -43,6 +43,8 @@ npm install -g bower
 speak "Installing package dependencies..."
 bower install
 polymer build
+speak "Copying missing bower components..."
+cp -rn bower_components build/bundled/
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/

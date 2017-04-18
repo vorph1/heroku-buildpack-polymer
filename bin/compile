@@ -49,8 +49,8 @@ cp -rn bower_components build/bundled/
 speak "Setting Environment-specific Things..."
 cd $BUILD_DIR
 rm config/env.js
-cp config/env-$NODE_ENV.js config/env.js
-cat config/env.js
+cp config/env-$NODE_ENV.js build/unbundled/config/env.js
+cat build/unbundled/config/env.js
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/

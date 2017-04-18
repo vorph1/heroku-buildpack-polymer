@@ -23,8 +23,12 @@ if [ -d "$ENV_DIR" ]; then
   done
 fi
 
-speak "Installing NPM..."
+cd $BUILD_DIR
+rm config/env.js
+mv config/env-$NODE_ENV.js config/env.js
 cat config/env.js
+
+speak "Installing NPM..."
 NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
 wget -nv https://nodejs.org/dist/v7.8.0/$NODE_TAR
@@ -46,6 +50,7 @@ speak "Setting Environment-specific Things..."
 cd $BUILD_DIR
 rm config/env.js
 mv config/env-$NODE_ENV.js config/env.js
+cat config/env.js
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/

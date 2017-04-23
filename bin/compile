@@ -24,6 +24,7 @@ if [ -d "$ENV_DIR" ]; then
 fi
 
 speak "Installing NPM..."
+cd $BUILD_DIR
 NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
 wget -nv https://nodejs.org/dist/v7.8.0/$NODE_TAR

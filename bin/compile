@@ -23,11 +23,6 @@ if [ -d "$ENV_DIR" ]; then
   done
 fi
 
-cd $BUILD_DIR
-rm config/env.js
-cp config/env-$NODE_ENV.js config/env.js
-cat config/env.js
-
 speak "Installing NPM..."
 NODE_DIR="node-v7.8.0-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
@@ -45,12 +40,6 @@ polymer build
 speak "Copying missing bower components..."
 cp -rn bower_components build/unbundled/
 cp -rn bower_components build/bundled/
-
-speak "Setting Environment-specific Things..."
-cd $BUILD_DIR
-rm config/env.js
-cp config/env-$NODE_ENV.js build/unbundled/config/env.js
-cat build/unbundled/config/env.js
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/

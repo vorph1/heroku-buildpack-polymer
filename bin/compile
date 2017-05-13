@@ -37,16 +37,6 @@ npm install -g bower
 
 speak "Installing package dependencies..."
 bower install
-speak "Current Directory:"
-pwd
-speak "Contents:"
-ls -lah .
-speak "Inside bower:"
-ls -lah ./bower_components/
-cd bower_components
-ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
-cd ..
-ls -lah ./bower_components/paper-styles/element-styles/
 polymer build
 speak "Copying missing bower components..."
 cp -rn bower_components build/unbundled/

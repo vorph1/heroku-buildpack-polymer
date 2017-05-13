@@ -37,6 +37,11 @@ npm install -g bower
 
 speak "Installing package dependencies..."
 bower install
+speak "Current Directory:"
+pwd
+speak "Contents:"
+ls -lah .
+speak "Inside bower:"
 ls -lah ./bower_components/
 polymer build
 speak "Copying missing bower components..."

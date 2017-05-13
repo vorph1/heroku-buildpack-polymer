@@ -45,6 +45,7 @@ speak "Inside bower:"
 ls -lah ./bower_components/
 cd bower_components
 ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+ls -lah ./bower_components/paper-styles/element-styles/
 cd ..
 polymer build
 speak "Copying missing bower components..."

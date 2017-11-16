@@ -32,7 +32,7 @@ tar -zxf $NODE_TAR
 export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 
 speak "Installing Polymer 2..."
-npm install -g polymer-cli
+npm install -g polymer-cli bower rollup nps
 npm install -g bower
 
 speak "Installing package dependencies..."

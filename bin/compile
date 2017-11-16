@@ -33,6 +33,7 @@ export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 
 speak "Installing Polymer 2..."
 npm install -g polymer-cli bower rollup nps
+npm install --save-dev rollup-plugin-babel
 
 speak "Installing package dependencies..."
 bower install

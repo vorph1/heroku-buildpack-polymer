@@ -37,10 +37,8 @@ npm install babel-core rollup-plugin-babel rollup-plugin-commonjs
 
 speak "Installing package dependencies..."
 bower install
-polymer build
-speak "Copying missing bower components..."
-cp -rn bower_components build/unbundled/
-cp -rn bower_components build/bundled/
+speak "Building and bundling Polymer project..."
+polymer build --bundle
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/

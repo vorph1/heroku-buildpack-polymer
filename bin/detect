@@ -2,6 +2,7 @@
 
 if [ -f $1/bower.json ]; then
   echo "Polymer buildpack"
+  exit 0
 else
   echo "No bower.json"
   exit 1

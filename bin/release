@@ -3,5 +3,5 @@
 cat << EOF
 ---
 default_process_types:
-  web: polymer serve -H 0.0.0.0 -p ${PORT:-3000}
+  web: polymer serve -H 0.0.0.0 -p ${PORT:-5000}
 EOF

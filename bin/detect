@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-if [ -f $1/bower.json ]; then
+if [ -f $1/polymer.json ]; then
   echo "Polymer buildpack"
   exit 0
 else
-  echo "No bower.json"
+  echo "No polymer.json"
   exit 1
 fi

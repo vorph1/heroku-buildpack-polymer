@@ -25,19 +25,18 @@ fi
 
 speak "Installing NPM..."
 cd $BUILD_DIR
-NODE_VER=10.4.1
+NODE_VER=10.11.0
 NODE_DIR="node-v$NODE_VER-linux-x64"
 NODE_TAR="$NODE_DIR.tar.gz"
 wget -nv https://nodejs.org/dist/v$NODE_VER/$NODE_TAR
 tar -zxf $NODE_TAR
 export PATH="$PATH:$BUILD_DIR/$NODE_DIR/bin"
 
-speak "Installing Polymer 2..."
-npm install -g polymer-cli bower rollup nps
-npm install babel-core rollup-plugin-babel rollup-plugin-commonjs
+speak "Installing Polymer 3..."
+npm install -g polymer-cli yarn
 
 speak "Installing package dependencies..."
-bower install
+yarn install
 
 mkdir -p $BUILD_DIR/vendor/bin
 mv $BUILD_DIR/$NODE_DIR $BUILD_DIR/vendor/bin/
